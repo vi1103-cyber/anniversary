@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Happy Wedding Anniversary 💍</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+            background: url('https://images.unsplash.com/photo-1520854221256-17451cc331bf') no-repeat center center/cover;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .content {
+            position: relative;
+            top: 15%;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 45px;
+            animation: glow 2s infinite alternate;
+        }
+        
+        p {
+            font-size: 22px;
+            margin: 10px 0;
+        }
+        
+        .heart {
+            font-size: 70px;
+            animation: heartbeat 1s infinite;
+        }
+        
+        .couple-img {
+            width: 250px;
+            border-radius: 20px;
+            margin-top: 20px;
+            box-shadow: 0 0 20px pink;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff;
+            }
+            to {
+                text-shadow: 0 0 30px #ff4da6;
+            }
+        }
+        
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        /* Floating hearts */
+        
+        .floating-heart {
+            position: absolute;
+            color: pink;
+            font-size: 20px;
+            animation: float 6s linear infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="content">
+        <div class="heart">❤️</div>
+
+        <h1>Happy Wedding Anniversary</h1>
+
+        <p>Dear Brother & Sister-in-Law 💕</p>
+
+        <p>
+            Wishing you endless love, happiness, and beautiful memories together 🥂✨
+        </p>
+
+        <img src="158A9277.jpg" alt="Anniversary Image" width="300">
+
+        <h2>Forever Together 💍</h2>
+    </div>
+
+    <!-- Floating Hearts Script -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("floating-heart");
+            heart.innerHTML = "💖";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = Math.random() * 20 + 15 + "px";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+
+</html>
